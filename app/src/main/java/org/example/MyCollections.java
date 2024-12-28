@@ -1,9 +1,11 @@
 package org.example;
 
+
+
 import java.util.Comparator;
 import java.util.List;
 
-public class Collections {
+public class MyCollections {
 
     public static <T> int binarySearch(List<? extends Comparable<? super T>> list, T key) {
         return binarySearch(list, key, null);

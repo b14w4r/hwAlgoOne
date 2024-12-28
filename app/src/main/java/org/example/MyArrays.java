@@ -4,32 +4,37 @@ import java.util.Comparator;
 
 public class MyArrays {
 
+  // Метод для бинарного поиска в массиве byte
   public static int binarySearch(byte[] a, byte key) {
     return binarySearch(a, 0, a.length, key);
   }
 
+  // Метод для бинарного поиска в массиве byte с указанием диапазона индексов
   public static int binarySearch(byte[] a, int fromIndex, int toIndex, byte key) {
     int low = fromIndex;
     int high = toIndex - 1;
 
+    // Пока диапазон поиска не пустой
     while (low <= high) {
-      int mid = (low + high) >>> 1;
+      int mid = (low + high) >>> 1; // Вычисление среднего индекса
       byte midVal = a[mid];
 
       if (midVal < key)
-        low = mid + 1;
+        low = mid + 1; // Если середина меньше ключа, сужаем диапазон
       else if (midVal > key)
-        high = mid - 1;
+        high = mid - 1; // Если середина больше ключа, сужаем диапазон
       else
-        return mid; // key found
+        return mid; // Если найдено совпадение, возвращаем индекс
     }
-    return -(low + 1); // key not found.
+    return -(low + 1);  // Если не найдено, возвращаем отрицательное значение
   }
 
+  // Метод для бинарного поиска в массиве char
   public static int binarySearch(char[] a, char key) {
     return binarySearch(a, 0, a.length, key);
   }
 
+  // Метод для бинарного поиска в массиве char с указанием диапазона индексов
   public static int binarySearch(char[] a, int fromIndex, int toIndex, char key) {
     int low = fromIndex;
     int high = toIndex - 1;
@@ -43,15 +48,17 @@ public class MyArrays {
       else if (midVal > key)
         high = mid - 1;
       else
-        return mid; // key found
+        return mid;
     }
-    return -(low + 1); // key not found.
+    return -(low + 1);
   }
 
+  // Метод для бинарного поиска в массиве double
   public static int binarySearch(double[] a, double key) {
     return binarySearch(a, 0, a.length, key);
   }
 
+  // Метод для бинарного поиска в массиве double с указанием диапазона индексов
   public static int binarySearch(double[] a, int fromIndex, int toIndex, double key) {
     int low = fromIndex;
     int high = toIndex - 1;
@@ -65,23 +72,25 @@ public class MyArrays {
       else if (midVal > key)
         high = mid - 1;
       else {
-        long midBits = Double.doubleToLongBits(midVal);
+        long midBits = Double.doubleToLongBits(midVal);  // Преобразуем значение в битовую форму
         long keyBits = Double.doubleToLongBits(key);
         if (midBits == keyBits)
-          return mid; // key found
+          return mid;
         else if (midBits < keyBits)
           low = mid + 1;
         else
           high = mid - 1;
       }
     }
-    return -(low + 1); // key not found.
+    return -(low + 1);
   }
 
+  // Метод для бинарного поиска в массиве float
   public static int binarySearch(float[] a, float key) {
     return binarySearch(a, 0, a.length, key);
   }
 
+  // Метод для бинарного поиска в массиве float с указанием диапазона индексов
   public static int binarySearch(float[] a, int fromIndex, int toIndex, float key) {
     int low = fromIndex;
     int high = toIndex - 1;
@@ -95,23 +104,25 @@ public class MyArrays {
       else if (midVal > key)
         high = mid - 1;
       else {
-        int midBits = Float.floatToIntBits(midVal);
+        int midBits = Float.floatToIntBits(midVal);  // Преобразуем значение в битовую форму
         int keyBits = Float.floatToIntBits(key);
         if (midBits == keyBits)
-          return mid; // key found
+          return mid;
         else if (midBits < keyBits)
           low = mid + 1;
         else
           high = mid - 1;
       }
     }
-    return -(low + 1); // key not found.
+    return -(low + 1);
   }
 
+  // Метод для бинарного поиска в массиве int
   public static int binarySearch(int[] a, int key) {
     return binarySearch(a, 0, a.length, key);
   }
 
+  // Метод для бинарного поиска в массиве int с указанием диапазона индексов
   public static int binarySearch(int[] a, int fromIndex, int toIndex, int key) {
     int low = fromIndex;
     int high = toIndex - 1;
@@ -125,15 +136,17 @@ public class MyArrays {
       else if (midVal > key)
         high = mid - 1;
       else
-        return mid; // key found
+        return mid;
     }
-    return -(low + 1); // key not found.
+    return -(low + 1);
   }
 
+  // Метод для бинарного поиска в массиве long
   public static int binarySearch(long[] a, long key) {
     return binarySearch(a, 0, a.length, key);
   }
 
+  // Метод для бинарного поиска в массиве long с указанием диапазона индексов
   public static int binarySearch(long[] a, int fromIndex, int toIndex, long key) {
     int low = fromIndex;
     int high = toIndex - 1;
@@ -147,15 +160,17 @@ public class MyArrays {
       else if (midVal > key)
         high = mid - 1;
       else
-        return mid; // key found
+        return mid;
     }
-    return -(low + 1); // key not found.
+    return -(low + 1);
   }
 
+  // Метод для бинарного поиска в массиве short
   public static int binarySearch(short[] a, short key) {
     return binarySearch(a, 0, a.length, key);
   }
 
+  // Метод для бинарного поиска в массиве short с указанием диапазона индексов
   public static int binarySearch(short[] a, int fromIndex, int toIndex, short key) {
     int low = fromIndex;
     int high = toIndex - 1;
@@ -169,15 +184,17 @@ public class MyArrays {
       else if (midVal > key)
         high = mid - 1;
       else
-        return mid; // key found
+        return mid;
     }
-    return -(low + 1); // key not found.
+    return -(low + 1);
   }
 
+  // Метод для бинарного поиска в обобщённом массиве с компаратором
   public static <T> int binarySearch(T[] a, T key, Comparator<? super T> c) {
     return binarySearch(a, 0, a.length, key, c);
   }
 
+  // Метод для бинарного поиска в обобщённом массиве с указанием диапазона индексов и компаратором
   public static <T> int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator<? super T> c) {
     int low = fromIndex;
     int high = toIndex - 1;
@@ -192,8 +209,8 @@ public class MyArrays {
       else if (cmp > 0)
         high = mid - 1;
       else
-        return mid; // key found
+        return mid;
     }
-    return -(low + 1); // key not found.
+    return -(low + 1);
   }
 }
